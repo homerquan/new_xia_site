@@ -1,0 +1,42 @@
+---
+title: ""
+format:
+  html:
+    theme: custom.scss
+    css: styles.css
+    toc: false
+    page-layout: full
+listing:
+  contents: publication
+  sort: "date desc"
+  type: default
+  max-items: 10
+---
+
+:::: {.columns}
+
+::: {.column width="30%" }
+
+<div style="text-align: center">
+![](images/xia.jpg){.profile-img width=220}
+</div>
+
+<div style="text-align: center">
+**Xia Zhou**  
+Associate Professor  
+[Department of Computer Science, Columbia University](https://www.cs.columbia.edu)
+</div>
+
+:::
+
+::: {.column width="70%"}
+
+I am an Associate Professor in the [Department of Computer Science](https://www.cs.columbia.edu) at Columbia University. I direct the [Mobile X Lab](https://mobilex.cs.columbia.edu). Before joining Columbia, I was the co-director of the [Dartmouth Networking and Ubiquitous Systems (DartNets) Lab](https://dartnets.cs.dartmouth.edu) and the [Dartmouth Reality and Robotics Lab (RLab)](https://rlab.cs.dartmouth.edu) at Dartmouth College. I was also affiliated with the [Augmented Health Lab](https://ah.cs.dartmouth.edu). I received my PhD in Computer Science at [UC Santa Barbara](https://www.cs.ucsb.edu) in June 2013, working under the supervision of [Prof. Heather Zheng](https://users.soe.ucsc.edu/~zheng/). I was a visiting faculty in [National Taiwan University](https://www.ntu.edu.tw/english/) from December 2016 to February 2017, and in [University of Cambridge](https://www.cam.ac.uk) from April 2017 to June 2017.
+
+My research interest lies broadly in mobile computing and its intersection with other disciplines. Most of my current projects center on light—a ubiquitous medium around us. We explore a range of projects that turn light into a powerful medium for data communication and object/behavioral sensing. Check out our [demo videos](https://mobilex.cs.columbia.edu/demos/) to learn more details. My PhD work designed network systems to handle the massive volume and unpredictable nature of today's data traffic (see more in our [MobiCom'08](htt)
+::::
+
+## Top Publications
+
+::: {#listing}
+:::

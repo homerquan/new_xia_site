@@ -2,15 +2,19 @@ project:
   type: website
 
 website:
-  title: "today"
+  title: "Xia Zhou"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: Home
+        file: index.qmd
+      - text: Publications
+        file: publications.qmd
 
 format:
   html:
-    theme: cosmo
+    theme:
+      - cosmo
+      - custom.scss
     css: styles.css
-    toc: true
+    toc: false
+    page-layout: full

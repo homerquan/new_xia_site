@@ -1,0 +1,44 @@
+---
+title: 'ThreadSense: Locating Touch on an Extremely Thin Interactive Thread'
+authors:
+- Pin-Sung Ku
+- Qijia Shao
+- Te-Yen Wu
+- Jun Gong
+- Ziyan Zhu
+- Xia Zhou
+- Xing-Dong Yang
+doi: ''
+publication_types:
+- '1'
+publication: ACM CHI Conference on Human Factors in Computing Systems (CHI), 2020.
+publication_short: CHI
+award: ''
+abstract: We propose a new sensing technique for one-dimensional touch input workable
+  on an interactive thread of less than 0.4 mm thick. Our technique locates up to
+  two touches using impedance sensing with a spacing resolution unachievable by the
+  existing methods. Our approach is also unique in that it locates a touch based on
+  a mathematical model describing the change in thread impedance in relation to the
+  touch locations. This allows the system to be easily calibrated by the user touching
+  a known location(s) on the thread. The system can thus quickly adapt to various
+  environmental settings and users. A system evaluation showed that our system could
+  track the slide motion of a finger with an average error distance of 6.13 mm and
+  4.16 mm using one and five touches for calibration, respectively. The system could
+  also distinguish between single touch and two concurrent touches with an accuracy
+  of 99% and could track two concurrent touches with an average error distance of
+  8.55 mm. We demonstrate new interactions enabled by our sensing approach in several
+  unique applications.
+featured: false
+nopage: true
+links:
+- name: Video
+  url: https://www.youtube.com/watch?v=0In_udmdOko&feature=emb_title
+image: featured.jpg
+image-alt: 3D Wi-Fi reflector brain map
+---
+
+
+## Video
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/0In_udmdOko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

@@ -1,0 +1,84 @@
+/*-- scss:defaults --*/
+// Define Sass variables for dark theme
+$body-bg: #1c1f26;
+$body-color: #e2e2e2;
+$link-color: #67bdfc;
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$dark-bg: #262a33; // dark background variation for elements
+$accent-color: #ff6b6b; // accent for buttons and highlights
+$input-bg: darken($body-bg, 10%);
+
+/*-- scss:rules --*/
+body {
+  background-color: $body-bg;
+  color: $body-color;
+  font-family: $font-family-sans-serif;
+  line-height: 1.6;
+}
+
+.navbar {
+  background-color: $dark-bg;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 0 5px #000;
+  padding: 0.5rem 1rem;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: lighten($link-color, 10%);
+  }
+}
+
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+/* Buttons with dark theme styling */
+button {
+  background-color: $accent-color;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($accent-color, 10%);
+  }
+}
+
+/* Inputs and textarea styling for dark theme */
+input, textarea {
+  background-color: $input-bg;
+  color: $body-color;
+  border: 1px solid lighten($body-bg, 20%);
+  border-radius: 4px;
+  padding: 0.5rem;
+  &:focus {
+    border-color: $link-color;
+    outline: none;
+  }
+}
+
+/* Code and pre tags for code blocks */
+pre {
+  background-color: darken($body-bg, 5%);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+code {
+  background-color: lighten($body-bg, 5%);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Images */
+img {
+  border-radius: 8px;
+}
