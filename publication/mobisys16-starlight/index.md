@@ -34,6 +34,11 @@ links:
   url: http://dartnets.cs.dartmouth.edu/starlight
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - mobisys16-starlight.pdf
+cite: "cite.bib"
+pdf: mobisys16-starlight.pdf
 ---
 
 

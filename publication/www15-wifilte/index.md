@@ -22,6 +22,11 @@ nopage: true
 links: null
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - www15-wifilte.pdf
+cite: "cite.bib"
+pdf: www15-wifilte.pdf
 ---
 
 

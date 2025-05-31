@@ -1,0 +1,48 @@
+
+```{=html}
+<ul class="pub-list">
+  <% for (const item of items) { %>
+    <li class="pub-list-item">
+      <div class="pub-thumb">
+        <img src="<%- item.image %>" alt="<%- item['image-alt'] || '' %>">
+      </div>
+      <div class="pub-meta">
+        <div class="pub-title"><%= item.title %></div>
+        <div class="pub-venue-award">
+          <% if (item.publication) { %>
+            <em><%= item.publication %></em>
+          <% } %>
+          <% if (item.award) { %>
+            <span class="pub-award"><%= item.award %></span>
+          <% } %>
+        </div>
+        <% if (item.authors) { %>
+          <div class="pub-authors"><%= item.authors.join(', ') %></div>
+        <% } %>
+        <div class="pub-links">
+          <% /*  PDF / Video / Project website buttons */ %>
+          <% if (item.links) {
+               for (const link of item.links) { %>
+            <a href="<%- link.url %>" class="pub-button" target="_blank" rel="noopener">
+              <%= link.name %>
+            </a>
+          <%   }
+             } %>
+
+          <% /*  CITE button: we will fetch item.cite via JavaScript */ %>
+          <% if (item.cite) { 
+               /* Build the correct path to the .bib file: replace "index.md" with item.cite */
+               const citeURL = item.path.replace(/index\.md$/, item.cite);
+          %>
+            <button 
+              class="pub-button pub-cite-button" 
+              data-cite-url="<%- citeURL %>">
+              Cite
+            </button>
+          <% } %>
+        </div>
+      </div>
+    </li>
+  <% } %>
+</ul>
+```

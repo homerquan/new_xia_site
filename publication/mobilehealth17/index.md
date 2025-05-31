@@ -34,4 +34,9 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - mobilehealth17.pdf
+cite: "cite.bib"
+pdf: mobilehealth17.pdf
 ---

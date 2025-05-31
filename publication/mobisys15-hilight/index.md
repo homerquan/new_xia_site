@@ -22,6 +22,11 @@ links:
   url: http://dartnets.cs.dartmouth.edu/hilight
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - mobisys15-hilight.pdf
+cite: "cite.bib"
+pdf: mobisys15-hilight.pdf
 ---
 
 

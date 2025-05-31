@@ -18,4 +18,9 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - info11_topaz.pdf
+cite: "cite.bib"
+pdf: info11_topaz.pdf
 ---

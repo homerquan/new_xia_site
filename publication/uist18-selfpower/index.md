@@ -39,6 +39,11 @@ links:
   url: https://www.youtube.com/watch?v=0In_udmdOko&feature=emb_title
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - uist18-selfpower.pdf
+cite: "cite.bib"
+pdf: uist18-selfpower.pdf
 ---
 
 

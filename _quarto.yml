@@ -10,6 +10,9 @@ website:
       - text: Publications
         file: publications.qmd
 
+files:
+  - publication/**/*.bib
+
 format:
   html:
     theme:

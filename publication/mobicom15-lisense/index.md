@@ -33,6 +33,11 @@ links:
   url: http://dartnets.cs.dartmouth.edu/lisense
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - mobicom15-lisense.pdf
+cite: "cite.bib"
+pdf: mobicom15-lisense.pdf
 ---
 
 

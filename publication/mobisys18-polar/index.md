@@ -42,5 +42,10 @@ links:
   url: https://www.youtube.com/watch?v=i2AS7rWZC7M
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - mobisys18-polar.pdf
+cite: "cite.bib"
+pdf: mobisys18-polar.pdf
 ---
 

@@ -33,4 +33,9 @@ links:
   url: http://dartnets.cs.dartmouth.edu/darklight
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - mobicom16-darklight.pdf
+cite: "cite.bib"
+pdf: mobicom16-darklight.pdf
 ---

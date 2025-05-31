@@ -33,4 +33,9 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - wintech16-drone.pdf
+cite: "cite.bib"
+pdf: wintech16-drone.pdf
 ---

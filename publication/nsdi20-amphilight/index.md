@@ -36,6 +36,11 @@ links:
   url: https://www.youtube.com/watch?v=red-Q16MYWU&feature=youtu.be
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - nsdi20-amphilight.pdf
+cite: "cite.bib"
+pdf: nsdi20-amphilight.pdf
 ---
 
 

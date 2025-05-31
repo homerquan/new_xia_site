@@ -15,3 +15,185 @@
   font-size: 1.1rem;
 }
 
+.pub-list {
+  list-style: none;         /* Remove default bullets */
+  margin: 0;
+  padding: 0;
+}
+/* ──────────────────────────────── */
+/* Publication list (<ul>) reset */
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each publication row (<li>) */
+.pub-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+/* Thumbnail (left) */
+.pub-thumb img {
+  width: 180px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Metadata (right) */
+.pub-meta {
+  flex: 1;
+}
+
+/* Title */
+.pub-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+/* Venue + Award */
+.pub-venue-award {
+  font-size: 1rem;
+  color: #dddddd;
+  margin-bottom: 0.4rem;
+}
+.pub-venue-award em {
+  font-style: italic;
+}
+.pub-award {
+  color: #ff4c4c;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* Authors */
+.pub-authors {
+  font-size: 0.95rem;
+  color: #cccccc;
+  margin-bottom: 0.8rem;
+}
+
+/* Link & Cite buttons container */
+.pub-links {
+  margin-top: 0.5rem;
+}
+
+/* Common button style */
+.pub-button {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid #8857ff;
+  color: #bb9cff;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.pub-button:hover {
+  background-color: #8857ff;
+  color: #ffffff;
+}
+
+/* ──────────────────────────────── */
+/* Cite Modal Overlay */
+#cite-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cite Modal Container */
+#cite-modal {
+  background-color: #1e1f26;
+  color: #e2e2e2;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Modal header (“Cite”) */
+#cite-modal h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+/* Modal close “X” button */
+#cite-modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: #ccc;
+  font-size: 1.75rem;       /* Increase font size */
+  line-height: 1;
+  width: 2.25rem;           /* Make the clickable area bigger */
+  height: 2.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cite-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* BibTeX content area */
+#cite-modal pre {
+  background-color: #2a2d36;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  max-height: 400px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  font-family: Menlo, Consolas, "Courier New", monospace;
+  font-size: 0.90rem;
+}
+
+/* Modal action buttons */
+#cite-modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+}
+#cite-modal-actions button {
+  background-color: transparent;
+  border: 1px solid #8857ff;
+  color: #bb9cff;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+#cite-modal-actions button:hover {
+  background-color: #8857ff;
+  color: #ffffff;
+}

@@ -35,6 +35,11 @@ links:
   url: https://www.youtube.com/watch?v=0In_udmdOko&feature=emb_title
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - chi20-threadsense.pdf
+cite: "cite.bib"
+pdf: chi20-threadsense.pdf
 ---
 
 

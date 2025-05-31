@@ -22,4 +22,9 @@ links:
     url: paper.pdf
   - name: Project website
     url: http://dartnets.cs.dartmouth.edu/wiprint
+resources:
+  - cite.bib
+  - buildsys17-3dprint.pdf
+cite: "cite.bib"
+pdf: buildsys17-3dprint.pdf
 ---

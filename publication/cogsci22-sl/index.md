@@ -32,5 +32,10 @@ links:
   url: https://escholarship.org/uc/item/4bw8874x
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - MH_CogSci22Poster.pdf
+cite: "cite.bib"
+pdf: MH_CogSci22Poster.pdf
 ---
 

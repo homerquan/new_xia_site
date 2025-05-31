@@ -26,6 +26,11 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - uist17-pyro.pdf
+cite: "cite.bib"
+pdf: uist17-pyro.pdf
 ---
 
 

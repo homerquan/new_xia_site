@@ -19,6 +19,11 @@ links:
   url: http://dartnets.cs.dartmouth.edu/wiprint
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - hotw15-wiprint.pdf
+cite: "cite.bib"
+pdf: hotw15-wiprint.pdf
 ---
 
 

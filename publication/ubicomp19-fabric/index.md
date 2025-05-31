@@ -40,6 +40,11 @@ links:
   url: https://www.youtube.com/watch?t=37&v=Pv7OZZiP88Y&feature=youtu.be
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - ubicomp19-fabric.pdf
+cite: "cite.bib"
+pdf: ubicomp19-fabric.pdf
 ---
 
 

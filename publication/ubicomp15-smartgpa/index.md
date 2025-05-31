@@ -20,6 +20,11 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - ubicomp15-smartgpa.pdf
+cite: "cite.bib"
+pdf: ubicomp15-smartgpa.pdf
 ---
 
 

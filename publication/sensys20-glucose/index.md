@@ -36,6 +36,11 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - sensys20-glucose.pdf
+cite: "cite.bib"
+pdf: sensys20-glucose.pdf
 ---
 
 

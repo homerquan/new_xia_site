@@ -9,8 +9,9 @@ format:
 listing:
   contents: publication
   sort: "date desc"
-  type: default
-  max-items: 10
+  type: custom
+  template: publication-items.ejs
+  # max-items: 10
 ---
 
 :::: {.columns}
@@ -24,7 +25,7 @@ listing:
 <div style="text-align: center">
 **Xia Zhou**  
 Associate Professor  
-[Department of Computer Science, Columbia University](https://www.cs.columbia.edu)
+[Department of Computer Science,<br>Columbia University](https://www.cs.columbia.edu)
 </div>
 
 :::
@@ -36,7 +37,10 @@ I am an Associate Professor in the [Department of Computer Science](https://www.
 My research interest lies broadly in mobile computing and its intersection with other disciplines. Most of my current projects center on light—a ubiquitous medium around us. We explore a range of projects that turn light into a powerful medium for data communication and object/behavioral sensing. Check out our [demo videos](https://mobilex.cs.columbia.edu/demos/) to learn more details. My PhD work designed network systems to handle the massive volume and unpredictable nature of today's data traffic (see more in our [MobiCom'08](htt)
 ::::
 
-## Top Publications
+## Publications
 
 ::: {#listing}
 :::
+
+<!-- Include the external JS file --> 
+<script src="js/cite-modal.js"></script>

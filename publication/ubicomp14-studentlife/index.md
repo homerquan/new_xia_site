@@ -38,4 +38,9 @@ links:
   url: https://studentlife.cs.dartmouth.edu/
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - ubicomp14-studentlife.pdf
+cite: "cite.bib"
+pdf: ubicomp14-studentlife.pdf
 ---

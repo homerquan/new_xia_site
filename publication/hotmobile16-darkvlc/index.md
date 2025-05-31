@@ -29,6 +29,11 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - hotmobile16-darkvlc.pdf
+cite: "cite.bib"
+pdf: hotmobile16-darkvlc.pdf
 ---
 
 

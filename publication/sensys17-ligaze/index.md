@@ -37,6 +37,11 @@ links:
   url: http://dartnets.cs.dartmouth.edu/ligaze
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - sensys17-ligaze.pdf
+cite: "cite.bib"
+pdf: sensys17-ligaze.pdf
 ---
 
 

@@ -37,4 +37,9 @@ links:
   url: http://dartnets.cs.dartmouth.edu/aili
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - ubicomp17-aili.pdf
+cite: "cite.bib"
+pdf: ubicomp17-aili.pdf
 ---

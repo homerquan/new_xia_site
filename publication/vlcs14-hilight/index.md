@@ -25,6 +25,11 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - vlcs14-hilight.pdf
+cite: "cite.bib"
+pdf: vlcs14-hilight.pdf
 ---
 
 

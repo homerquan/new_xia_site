@@ -29,4 +29,9 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - wpa14.pdf
+cite: "cite.bib"
+pdf: wpa14.pdf
 ---

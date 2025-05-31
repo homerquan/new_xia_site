@@ -34,5 +34,10 @@ nopage: true
 links: null
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - comsnets22-light.pdf
+cite: "cite.bib"
+pdf: comsnets22-light.pdf
 ---
 

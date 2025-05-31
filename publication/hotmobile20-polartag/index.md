@@ -30,6 +30,11 @@ links:
   url: https://www.youtube.com/watch?v=lHfvueWdjJQ
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - hotmobile20-polartag.pdf
+cite: "cite.bib"
+pdf: hotmobile20-polartag.pdf
 ---
 
 

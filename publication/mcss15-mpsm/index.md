@@ -30,6 +30,11 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - mcss15-mpsm.pdf
+cite: "cite.bib"
+pdf: mcss15-mpsm.pdf
 ---
 
 

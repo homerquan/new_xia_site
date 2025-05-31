@@ -31,6 +31,11 @@ links:
   url: https://digitalcommons.dartmouth.edu/cs_tr/378/
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - mobicom18-eye.pdf
+cite: "cite.bib"
+pdf: mobicom18-eye.pdf
 ---
 
 

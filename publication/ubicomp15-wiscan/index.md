@@ -22,6 +22,11 @@ links:
   url: http://dartnets.cs.dartmouth.edu/wiprint
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - ubicomp15-wiscan.pdf
+cite: "cite.bib"
+pdf: ubicomp15-wiscan.pdf
 ---
 
 

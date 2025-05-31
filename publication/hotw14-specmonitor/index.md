@@ -32,6 +32,11 @@ featured: false
 nopage: true
 image: featured.jpg
 image-alt: 3D Wi-Fi reflector brain map
+resources:
+  - cite.bib
+  - hotw14-specmonitor.pdf
+cite: "cite.bib"
+pdf: hotw14-specmonitor.pdf
 ---
 
 
