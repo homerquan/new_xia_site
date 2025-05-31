@@ -20,7 +20,16 @@
           <div class="pub-authors"><%= item.authors.join(', ') %></div>
         <% } %>
         <div class="pub-links">
-          <% /*  PDF / Video / Project website buttons */ %>
+          <% /* PDF button: replace "index.md" with item.pdf */ %>
+          <% if (item.pdf) {
+               const pdfURL = item.path.replace(/index\.md$/, item.pdf);
+          %>
+            <a href="<%- pdfURL %>" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          <% } %>
+
+          <% /* Existing links (e.g., Video, Project website) */ %>
           <% if (item.links) {
                for (const link of item.links) { %>
             <a href="<%- link.url %>" class="pub-button" target="_blank" rel="noopener">
@@ -29,13 +38,12 @@
           <%   }
              } %>
 
-          <% /*  CITE button: we will fetch item.cite via JavaScript */ %>
-          <% if (item.cite) { 
-               /* Build the correct path to the .bib file: replace "index.md" with item.cite */
+          <% /* CITE button: replace "index.md" with item.cite */ %>
+          <% if (item.cite) {
                const citeURL = item.path.replace(/index\.md$/, item.cite);
           %>
-            <button 
-              class="pub-button pub-cite-button" 
+            <button
+              class="pub-button pub-cite-button"
               data-cite-url="<%- citeURL %>">
               Cite
             </button>

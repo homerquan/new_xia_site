@@ -72,21 +72,49 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-teach-listing .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-project','listing-website','listing-files','listing-format','listing-language','listing-title','listing-authors','listing-date','listing-doi','listing-publication_types','listing-publication','listing-publication_short','listing-award','listing-abstract','listing-featured','listing-nopage','listing-image','listing-image-alt','listing-path','listing-outputHref','listing-date-modified','listing-author','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-links','listing-author_notes','listing-cite',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
-      page: 25,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-project","listing-website","listing-files","listing-format","listing-language","listing-title","listing-authors","listing-date","listing-doi","listing-publication_types","listing-publication","listing-publication_short","listing-award","listing-abstract","listing-featured","listing-nopage","listing-image","listing-image-alt","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-links","listing-author_notes","listing-cite"],
+      valueNames: ['listing-project','listing-website','listing-files','listing-resources','listing-format','listing-language','listing-title','listing-semesters','listing-path','listing-outputHref','listing-author','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-url',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-files","listing-resources","listing-format","listing-language","listing-title","listing-semesters","listing-path","listing-outputHref","listing-author","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-url"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-teach-listing'] = new List('listing-teach-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-pub-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-files','listing-resources','listing-format','listing-language','listing-title','listing-authors','listing-date','listing-doi','listing-publication_types','listing-publication','listing-publication_short','listing-award','listing-abstract','listing-featured','listing-nopage','listing-image','listing-image-alt','listing-cite','listing-pdf','listing-path','listing-outputHref','listing-date-modified','listing-author','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-links','listing-author_notes',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-project","listing-website","listing-files","listing-resources","listing-format","listing-language","listing-title","listing-authors","listing-date","listing-doi","listing-publication_types","listing-publication","listing-publication_short","listing-award","listing-abstract","listing-featured","listing-nopage","listing-image","listing-image-alt","listing-cite","listing-pdf","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-links","listing-author_notes"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-pub-listing'] = new List('listing-pub-listing', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -155,8 +183,20 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="./index.html#publication"> 
 <span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#teaching"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./pdfs/xz-cv.pdf"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mobilex.cs.columbia.edu"> 
+<span class="menu-text">Mobile X Lab</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -189,9 +229,9 @@ Associate Professor<br>
 </div><div class="column" style="width:70%;">
 <p>I am an Associate Professor in the <a href="https://www.cs.columbia.edu">Department of Computer Science</a> at Columbia University. I direct the <a href="https://mobilex.cs.columbia.edu">Mobile X Lab</a>. Before joining Columbia, I was the co-director of the <a href="https://dartnets.cs.dartmouth.edu">Dartmouth Networking and Ubiquitous Systems (DartNets) Lab</a> and the <a href="https://rlab.cs.dartmouth.edu">Dartmouth Reality and Robotics Lab (RLab)</a> at Dartmouth College. I was also affiliated with the <a href="https://ah.cs.dartmouth.edu">Augmented Health Lab</a>. I received my PhD in Computer Science at <a href="https://www.cs.ucsb.edu">UC Santa Barbara</a> in June 2013, working under the supervision of <a href="https://users.soe.ucsc.edu/~zheng/">Prof.&nbsp;Heather Zheng</a>. I was a visiting faculty in <a href="https://www.ntu.edu.tw/english/">National Taiwan University</a> from December 2016 to February 2017, and in <a href="https://www.cam.ac.uk">University of Cambridge</a> from April 2017 to June 2017.</p>
 <p>My research interest lies broadly in mobile computing and its intersection with other disciplines. Most of my current projects center on light—a ubiquitous medium around us. We explore a range of projects that turn light into a powerful medium for data communication and object/behavioral sensing. Check out our <a href="https://mobilex.cs.columbia.edu/demos/">demo videos</a> to learn more details. My PhD work designed network systems to handle the massive volume and unpredictable nature of today’s data traffic (see more in our <a href="htt">MobiCom’08</a></p>
-</div><section id="publications" class="level2">
-<h2 class="anchored" data-anchor-id="publications">Publications</h2>
-<div id="listing-listing" class="quarto-listing quarto-listing-container-custom">
+</div><section id="publication" class="level2">
+<h2 class="anchored" data-anchor-id="publication">Publications</h2>
+<div id="listing-pub-listing" class="quarto-listing quarto-listing-container-custom">
 <ul class="pub-list">
   
     <li class="pub-list-item">
@@ -212,12 +252,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/chi20-threadsense/chi20-threadsense.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="https://www.youtube.com/watch?v=0In_udmdOko&amp;feature=emb_title" class="pub-button" target="_blank" rel="noopener">
               Video
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/chi20-threadsense/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -243,12 +294,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/hotmobile20-polartag/hotmobile20-polartag.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="https://www.youtube.com/watch?v=lHfvueWdjJQ" class="pub-button" target="_blank" rel="noopener">
               Presentation
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/hotmobile20-polartag/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -272,12 +334,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/cogsci22-sl/MH_CogSci22Poster.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="https://escholarship.org/uc/item/4bw8874x" class="pub-button" target="_blank" rel="noopener">
               PDF
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/cogsci22-sl/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -301,8 +374,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobisys22-sunflower/mobisys22-sunflower.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobisys22-sunflower/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -326,8 +410,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/comsnets22-light/comsnets22-light.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/comsnets22-light/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -351,8 +446,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/ubicomp21-facesense/ubicomp21-facesense.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/ubicomp21-facesense/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -376,8 +482,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/ubicomp20-motion/ubicomp20-motion.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/ubicomp20-motion/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -401,8 +518,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/sensys20-glucose/sensys20-glucose.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/sensys20-glucose/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -428,12 +556,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/nsdi20-amphilight/nsdi20-amphilight.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="https://www.youtube.com/watch?v=red-Q16MYWU&amp;feature=youtu.be" class="pub-button" target="_blank" rel="noopener">
               Presentation
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/nsdi20-amphilight/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -455,6 +594,9 @@ Associate Professor<br>
           <div class="pub-authors">José Camacho, Chris McDonald, Ronald Peterson, Xia Zhou, David Kotz</div>
         
         <div class="pub-links">
+          
+          
+
           
           
             <a href="https://www.sciencedirect.com/science/article/abs/pii/S1389128619308187" class="pub-button" target="_blank" rel="noopener">
@@ -486,12 +628,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/ubicomp19-fabric/ubicomp19-fabric.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="https://www.youtube.com/watch?t=37&amp;v=Pv7OZZiP88Y&amp;feature=youtu.be" class="pub-button" target="_blank" rel="noopener">
               Featured in NSF "4 Awesome Discoveries You Probably Didn’t Hear About This Week"
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/ubicomp19-fabric/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -515,12 +668,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobicom18-eye/mobicom18-eye.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="https://digitalcommons.dartmouth.edu/cs_tr/378/" class="pub-button" target="_blank" rel="noopener">
               Tech report
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobicom18-eye/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -544,12 +708,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/uist18-selfpower/uist18-selfpower.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="https://www.youtube.com/watch?v=0In_udmdOko&amp;feature=emb_title" class="pub-button" target="_blank" rel="noopener">
               Video
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/uist18-selfpower/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -573,12 +748,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobisys18-polar/mobisys18-polar.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="https://www.youtube.com/watch?v=i2AS7rWZC7M" class="pub-button" target="_blank" rel="noopener">
               Video
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobisys18-polar/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -602,8 +788,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/ubicomp18-protractor/ubicomp18-protractor.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/ubicomp18-protractor/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -627,6 +824,13 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/buildsys17-3dprint/buildsys17-3dprint.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="paper.pdf" class="pub-button" target="_blank" rel="noopener">
               PDF
             </a>
@@ -637,6 +841,10 @@ Associate Professor<br>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/buildsys17-3dprint/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -660,6 +868,13 @@ Associate Professor<br>
           <div class="pub-authors">Tianxing Li, Qiang Liu, Xia Zhou</div>
         
         <div class="pub-links">
+          
+          
+            <a href="./publication/sensys17-ligaze/sensys17-ligaze.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
           
           
             <a href="http://dartnets.cs.dartmouth.edu/ligaze" class="pub-button" target="_blank" rel="noopener">
@@ -695,8 +910,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/uist17-pyro/uist17-pyro.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/uist17-pyro/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -720,8 +946,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/vlcs17-inertial/vlcs17-inertial.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/vlcs17-inertial/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -745,12 +982,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/ubicomp17-aili/ubicomp17-aili.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="http://dartnets.cs.dartmouth.edu/aili" class="pub-button" target="_blank" rel="noopener">
               Project website
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/ubicomp17-aili/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -774,8 +1022,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobilehealth17/mobilehealth17.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobilehealth17/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -799,8 +1058,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/sensys16-specmonitor/sensys16-specmonitor.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/sensys16-specmonitor/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -826,12 +1096,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobicom16-darklight/mobicom16-darklight.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="http://dartnets.cs.dartmouth.edu/darklight" class="pub-button" target="_blank" rel="noopener">
               Project website
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobicom16-darklight/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -855,8 +1136,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/wintech16-drone/wintech16-drone.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/wintech16-drone/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -882,12 +1174,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobisys16-starlight/mobisys16-starlight.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="http://dartnets.cs.dartmouth.edu/starlight" class="pub-button" target="_blank" rel="noopener">
               Project website
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobisys16-starlight/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -911,8 +1214,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/hotmobile16-darkvlc/hotmobile16-darkvlc.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/hotmobile16-darkvlc/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -936,8 +1250,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mcss15-facelogging/mcss15-facelogging.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mcss15-facelogging/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -961,8 +1286,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mcss15-mpsm/mcss15-mpsm.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mcss15-mpsm/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -988,12 +1324,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/hotw15-wiprint/hotw15-wiprint.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="http://dartnets.cs.dartmouth.edu/wiprint" class="pub-button" target="_blank" rel="noopener">
               Project website
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/hotw15-wiprint/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1017,12 +1364,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/vlcs15-id/vlcs15-id.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="http://dartnets.cs.dartmouth.edu/wiprint" class="pub-button" target="_blank" rel="noopener">
               Project website
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/vlcs15-id/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1048,12 +1406,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobicom15-lisense/mobicom15-lisense.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="http://dartnets.cs.dartmouth.edu/lisense" class="pub-button" target="_blank" rel="noopener">
               Project website
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobicom15-lisense/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1079,8 +1448,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/ubicomp15-smartgpa/ubicomp15-smartgpa.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/ubicomp15-smartgpa/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1104,12 +1484,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/ubicomp15-wiscan/ubicomp15-wiscan.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="http://dartnets.cs.dartmouth.edu/wiprint" class="pub-button" target="_blank" rel="noopener">
               Project website
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/ubicomp15-wiscan/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1135,12 +1526,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobisys15-hilight/mobisys15-hilight.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="http://dartnets.cs.dartmouth.edu/hilight" class="pub-button" target="_blank" rel="noopener">
               Project website
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobisys15-hilight/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1164,8 +1566,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/www15-wifilte/www15-wifilte.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/www15-wifilte/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1189,8 +1602,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/hotw14-ivlc/hotw14-ivlc.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/hotw14-ivlc/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1216,12 +1640,23 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/ubicomp14-studentlife/ubicomp14-studentlife.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
+
+          
+          
             <a href="https://studentlife.cs.dartmouth.edu/" class="pub-button" target="_blank" rel="noopener">
               Project website
             </a>
           
 
           
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/ubicomp14-studentlife/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1245,8 +1680,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/hotw14-specmonitor/hotw14-specmonitor.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/hotw14-specmonitor/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1272,8 +1718,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/vlcs14-hilight/vlcs14-hilight.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/vlcs14-hilight/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1297,8 +1754,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobicom14-angora/mobicom14-angora.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobicom14-angora/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1322,8 +1790,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/wpa14/wpa14.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/wpa14/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1347,8 +1826,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/ton15-cg/ton15-cg.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/ton15-cg/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1374,8 +1864,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/sigmetrics13_cg/sigmetrics13_cg.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/sigmetrics13_cg/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1397,6 +1898,9 @@ Associate Professor<br>
           <div class="pub-authors">Xia Zhou, Zengbin Zhang, Yibo Zhu, Yubo Li, Saipriya Kumar, Amin Vahdat, Ben Y. Zhao, Haitao Zheng</div>
         
         <div class="pub-links">
+          
+          
+
           
           
 
@@ -1427,6 +1931,9 @@ Associate Professor<br>
 
           
           
+
+          
+          
         </div>
       </div>
     </li>
@@ -1449,8 +1956,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/mobicom11_borealis/mobicom11_borealis.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/mobicom11_borealis/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1474,8 +1992,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/sigmetrics11_baron/sigmetrics11_baron.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/sigmetrics11_baron/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1499,8 +2028,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/info11_topaz/info11_topaz.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/info11_topaz/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1522,6 +2062,9 @@ Associate Professor<br>
           <div class="pub-authors">Xia Zhou, Haitao Zheng</div>
         
         <div class="pub-links">
+          
+          
+
           
           
 
@@ -1549,8 +2092,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/dyspan10-optimus/dyspan10-optimus.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/dyspan10-optimus/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1574,8 +2128,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/crtextbook10/crtextbook10.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/crtextbook10/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1597,6 +2162,9 @@ Associate Professor<br>
           <div class="pub-authors">Xia Zhou, Haitao Zheng</div>
         
         <div class="pub-links">
+          
+          
+
           
           
 
@@ -1629,6 +2197,9 @@ Associate Professor<br>
 
           
           
+
+          
+          
         </div>
       </div>
     </li>
@@ -1649,6 +2220,9 @@ Associate Professor<br>
           <div class="pub-authors">Xia Zhou, Shravan Mettu, Haitao Zheng, Elizabeth M. Belding</div>
         
         <div class="pub-links">
+          
+          
+
           
           
 
@@ -1676,8 +2250,19 @@ Associate Professor<br>
         <div class="pub-links">
           
           
+            <a href="./publication/icc07-cora/icc07-cora.pdf" class="pub-button" target="_blank" rel="noopener">
+              PDF
+            </a>
+          
 
           
+          
+
+          
+          
+            <button class="pub-button pub-cite-button" data-cite-url="/publication/icc07-cora/cite.bib">
+              Cite
+            </button>
           
         </div>
       </div>
@@ -1685,9 +2270,101 @@ Associate Professor<br>
   
 </ul>
 <div class="listing-no-matching d-none">No matching items</div>
-<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+<nav id="pub-listing-pagination" class="listing-pagination" aria-label="Page Navigation">
   <ul class="pagination"></ul>
 </nav>
+</div>
+</section><section id="teaching" class="level2">
+<h2 class="anchored" data-anchor-id="teaching">Teaching</h2>
+<div id="listing-teach-listing" class="quarto-listing quarto-listing-container-custom">
+<div class="row">
+
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title anchored">CS69/169: Advanced Topics in Computer Networks</h5>
+        <p class="card-text flex-fill">
+          Fall 2014, Fall 2013
+        </p>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title anchored">CS200: Journal Club</h5>
+        <p class="card-text flex-fill">
+          Fall 2017
+        </p>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title anchored">CS69/169: Mobile X</h5>
+        <p class="card-text flex-fill">
+          Fall 2020, Fall 2018
+        </p>
+        
+          <a href="https://cs.dartmouth.edu/~xia/mobilex/" target="_blank" rel="noopener">
+            Class website
+          </a>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title anchored">CS69/169: All Things Wireless</h5>
+        <p class="card-text flex-fill">
+          Fall 2015
+        </p>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title anchored">CS50: Software Design &amp; Implementation</h5>
+        <p class="card-text flex-fill">
+          Summer 2020, Summer 2019, Winter 2019, Summer 2018, Summer 2017, Summer 2016, Summer 2015, Winter 2015
+        </p>
+        
+          <a href="https://cs.dartmouth.edu/~cs50/" target="_blank" rel="noopener">
+            Class website
+          </a>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title anchored">CS60: Computer Networks</h5>
+        <p class="card-text flex-fill">
+          Spring 2021, Spring 2018, Spring 2016, Spring 2015, Spring 2014
+        </p>
+        
+          <a href="https://cs.dartmouth.edu/~xia/cs60/" target="_blank" rel="noopener">
+            Class website
+          </a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 <!-- Include the external JS file -->
 <script src="js/cite-modal.js"></script>

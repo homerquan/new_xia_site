@@ -7,11 +7,16 @@ format:
     toc: false
     page-layout: full
 listing:
-  contents: publication
-  sort: "date desc"
-  type: custom
-  template: publication-items.ejs
-  # max-items: 10
+  - id: teach-listing
+    contents: teaching
+    type: custom
+    template: teaching-items.ejs
+    sort: "date desc"
+  - id: pub-listing
+    contents: publication
+    type: custom
+    template: publication-items.ejs
+    sort: "date desc"
 ---
 
 :::: {.columns}
@@ -37,9 +42,14 @@ I am an Associate Professor in the [Department of Computer Science](https://www.
 My research interest lies broadly in mobile computing and its intersection with other disciplines. Most of my current projects center on light—a ubiquitous medium around us. We explore a range of projects that turn light into a powerful medium for data communication and object/behavioral sensing. Check out our [demo videos](https://mobilex.cs.columbia.edu/demos/) to learn more details. My PhD work designed network systems to handle the massive volume and unpredictable nature of today's data traffic (see more in our [MobiCom'08](htt)
 ::::
 
-## Publications
+## Publications {#publication}
 
-::: {#listing}
+::: {#pub-listing}
+:::
+
+## Teaching {#teaching}
+
+::: {#teach-listing}
 :::
 
 <!-- Include the external JS file --> 

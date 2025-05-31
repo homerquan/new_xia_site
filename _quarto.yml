@@ -8,10 +8,21 @@ website:
       - text: Home
         file: index.qmd
       - text: Publications
-        file: publications.qmd
+        href: index.html#publication
+      - text: Teaching
+        href: index.html#teaching
+      - text: CV
+        href: pdfs/xz-cv.pdf
+      - text: Mobile X Lab
+        href: https://mobilex.cs.columbia.edu
 
 files:
-  - publication/**/*.bib
+  - publication/**/*.*
+  - teaching/**/*.*
+
+resources: 
+  - images/**
+  - pdfs/**
 
 format:
   html:

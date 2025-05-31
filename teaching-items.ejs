@@ -1,0 +1,28 @@
+```{=html}
+<div class="row">
+<% for (const item of items) { %>
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title"><%= item.title %></h5>
+        <p class="card-text flex-fill">
+          <%=
+            // Join the array of semesters with commas
+            (item.semesters || []).join(", ")
+          %>
+        </p>
+        <% if (item.url) { %>
+          <a
+            href="<%- item.url %>"
+            target="_blank"
+            rel="noopener"
+          >
+            Class website
+          </a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+<% } %>
+</div>
+```
